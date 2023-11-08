@@ -1,5 +1,5 @@
 !
-version 15.1
+version 12.4
 no service timestamps log datetime msec
 no service timestamps debug datetime msec
 service password-encryption
@@ -23,10 +23,6 @@ no ipv6 cef
 username admin password 7 08361D401D4A01
 !
 !
-license udi pid CISCO1941/K9 sn FTX1524HF7D-
-!
-!
-!
 !
 !
 !
@@ -44,12 +40,12 @@ spanning-tree mode pvst
 !
 !
 !
-interface GigabitEthernet0/0
+interface FastEthernet0/0
  ip address 192.168.1.65 255.255.255.192
  duplex auto
  speed auto
 !
-interface GigabitEthernet0/1
+interface FastEthernet0/1
  ip address 192.168.1.1 255.255.255.192
  duplex auto
  speed auto
@@ -62,17 +58,10 @@ interface Serial0/0/1
  ip address 192.168.4.1 255.255.255.248
  clock rate 2000000
 !
-interface FastEthernet0/1/0
- switchport mode access
-!
-interface FastEthernet0/1/1
- switchport mode access
-!
-interface FastEthernet0/1/2
- switchport mode access
-!
-interface FastEthernet0/1/3
- switchport mode access
+interface Ethernet0/1/0
+ ip address 192.168.1.130 255.255.255.128
+ duplex auto
+ speed auto
 !
 interface Vlan1
  no ip address
@@ -92,6 +81,7 @@ ip flow-export version 9
 !
 !
 banner motd #Udvozoljuk a 2. emeleti routeren#
+!
 !
 !
 !
